@@ -1,8 +1,8 @@
-ss5_service:
-    service.running:
-       - name: ss5
+ss5:
+    service:
+       - running
        - require:
-           - ss5_package
+           - pkg: ss5
            - ss5_config
 
 ss5_config:
@@ -13,7 +13,3 @@ ss5_config:
        - managed:
            - name: /usr/local/etc/ss5/ss5.passwd
            - source: salt://ss5/ss5.passwd
-
-ss5_package:
-    pkg.installed:
-       - ss5
