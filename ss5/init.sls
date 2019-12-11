@@ -8,11 +8,11 @@ ss5:
            - name: ss5
            - installed
      ss5_config:
-           - file: 
+           file: 
              - managed
              - name: /usr/local/etc/ss5/ss5.conf
              - source: salt://ss5/ss5.conf
-           - file:
+           file:
              - managed
              - name: /usr/local/etc/ss5/ss5.passwd
              - source: salt://ss5/ss5.passwd
