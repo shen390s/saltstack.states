@@ -1,5 +1,4 @@
-ss5:
-    service:
+service:
        - running
        - require:
            - pkg: ss5
