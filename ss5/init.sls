@@ -1,10 +1,7 @@
-ss5:
-    require:
-      - ss5_service
-
 ss5_service:
-    service.enabled:
+    service:
         - name: ss5
+        - enabled
         - require:
             - ss5_package
             - ss5_config
