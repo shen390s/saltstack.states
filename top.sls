@@ -1,6 +1,7 @@
 base:
    '*':
       - shell
-      - ss5
       - pstree
+   'ss5*':
+      - ss5
    
