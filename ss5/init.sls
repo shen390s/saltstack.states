@@ -6,6 +6,8 @@ ss5_service:
             - ss5_package
             - ss5_config
             - ss5_passwd    
+     service.running:
+        - name: ss5
 
 ss5_package:
     pkg:
