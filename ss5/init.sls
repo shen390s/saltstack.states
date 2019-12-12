@@ -1,5 +1,5 @@
 ss5:
-    - require:
+    require:
       - ss5_service
 
 ss5_service:
