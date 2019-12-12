@@ -1,11 +1,19 @@
 ss5:
-    pkg:
-      - installed
+    - require:
+      - ss5_service
+
+ss5_service:
     service.running:
-      - enable: True
-      - require:
-          - ss5_config
-          - ss5_passwd
+        - enable: True
+        - require:
+            - ss5_package
+            - ss5_config
+            - ss5_passwd    
+
+ss5_package:
+    pkg:
+       - name: ss5
+       - installed
 
 ss5_config:
     file: 
