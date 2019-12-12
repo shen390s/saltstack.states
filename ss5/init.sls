@@ -2,7 +2,7 @@ ss5:
     pkg:
       - installed
     service.running:
-      - enabled
+      - enable: True
       - require:
           - ss5_config
           - ss5_passwd
