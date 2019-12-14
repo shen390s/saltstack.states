@@ -1,7 +1,6 @@
 gogs_service:
-    service:
+    service.enabled:
         - name: gogs
-        - enable: True
         - require:
             - gogs_package
             - gogs_config
