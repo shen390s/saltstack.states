@@ -3,13 +3,12 @@ gogs:
         - enabled
         - require:
             - pkg: gogs
-            - gogs_config
+            - /usr/local/etc/gogs/conf
 
     pkg:
         - installed
 
-gogs_config:
+/usr/local/etc/gogs/conf:
     file.recurse:
-      - name: /usr/local/etc/gogs/conf
-      - source: salt://gogs/conf
+        - source: salt://gogs/conf
 
