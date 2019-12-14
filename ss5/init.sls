@@ -3,12 +3,11 @@ ss5:
         - enabled
         - require:
             - pkg: ss5
-            - ss5_config
+            - /usr/local/etc/ss5
 
     pkg:
         - installed 
 
-ss5_config:
+/usr/local/etc/ss5:
     file.recurse: 
-      - name: /usr/local/etc/ss5
       - source: salt://ss5/conf
