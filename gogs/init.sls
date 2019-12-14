@@ -12,6 +12,7 @@ gogs_package:
 gogs_config:
     file: 
       - managed
+      - replaceTrue: True
       - name: /usr/local/etc/gogs/conf/app.ini
       - source: salt://gogs/app.conf
 
