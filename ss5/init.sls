@@ -2,7 +2,7 @@ ss5:
     service:
         - enabled
         - require:
-            - package: ss5
+            - pkg: ss5
             - ss5_config
             - ss5_passwd    
 
