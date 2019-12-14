@@ -1,14 +1,13 @@
-ss5_service:
-    service.enabled:
-        - name: ss5
+ss5:
+    service:
+        - enabled
         - require:
-            - ss5_package
+            - package: ss5
             - ss5_config
             - ss5_passwd    
-ss5_package:
+
     pkg:
-       - name: ss5
-       - installed
+        - installed 
 
 ss5_config:
     file: 
