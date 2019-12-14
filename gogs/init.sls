@@ -1,18 +1,15 @@
-gogs_service:
-    service.enabled:
-        - name: gogs
+gogs:
+    service:
+        - enabled
         - require:
-            - gogs_package
+            - pkg: gogs
             - gogs_config
-gogs_package:
+
     pkg:
-       - name: gogs
-       - installed
+        - installed
 
 gogs_config:
-    file: 
-      - managed
-      - replaceTrue: True
-      - name: /usr/local/etc/gogs/conf/app.ini
-      - source: salt://gogs/app.conf
+    file.recursive:
+      - name: /usr/local/etc/gogs/conf
+      - source: salt://gogs/conf
 
