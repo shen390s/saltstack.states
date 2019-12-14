@@ -9,7 +9,7 @@ gogs:
         - installed
 
 gogs_config:
-    file.recursive:
+    file.recurse:
       - name: /usr/local/etc/gogs/conf
       - source: salt://gogs/conf
 
