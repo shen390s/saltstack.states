@@ -10,5 +10,5 @@ gogs:
 
 /usr/local/etc/gogs/conf:
     file.recurse:
-        - source: salt://gogs/conf
+        - source: salt://gogs/ini
 
