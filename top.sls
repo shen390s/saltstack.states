@@ -1,6 +1,6 @@
 base:
    '*':
-      - shell
+      - shell.zsh
       - utils.pstree
 
    'ss5*':
