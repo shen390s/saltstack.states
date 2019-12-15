@@ -1,7 +1,7 @@
 base:
    '*':
       - shell
-      - pstree
+      - utils.pstree
 
    'ss5*':
       - ss5
