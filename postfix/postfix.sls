@@ -23,7 +23,7 @@ postfix:
 {% endfor %}
 
 /usr/local/etc/postfix/main.cf:
-    file.recurse:
+    file.managed:
         - source: salt://postfix/postfix.conf/main.cf
         - template: jinja
 
