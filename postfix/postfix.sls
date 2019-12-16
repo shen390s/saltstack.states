@@ -13,3 +13,7 @@ postfix:
     file.recurse:
         - source: salt://postfix/postfix.conf
 
+"cd /etc/mail && make":
+    cmd.run:
+       - creates:
+         - /etc/mail/aliases.db
