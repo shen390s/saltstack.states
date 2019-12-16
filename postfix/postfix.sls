@@ -19,7 +19,7 @@ postfix:
 {% for xfile in files %}
 /usr/local/etc/postfix/{{ xfile }}:
     file.managed:
-       - source: salt://postfix/post.conf/{{ xfile }}
+       - source: salt://postfix/postfix.conf/{{ xfile }}
 {% endfor %}
 
 /usr/local/etc/postfix/main.cf:
