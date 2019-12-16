@@ -9,3 +9,5 @@ base:
    'gogs*':
       - gogs
    
+   'postfix*':
+      - postfix.postfix
