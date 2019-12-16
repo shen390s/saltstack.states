@@ -3,7 +3,7 @@ postfix:
         - enabled
         - require:
             - pkg: postfix-sasl
-            - /usr/local/etc/postfix/conf
+            - /usr/local/etc/postfix
 
     pkg:
         - name: postfix-sasl
