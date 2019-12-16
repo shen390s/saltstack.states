@@ -17,7 +17,7 @@ postfix:
         - installed
 
 {% for xfile in files %}
-/usr/local/etc/postfix{{ xfile }}:
+/usr/local/etc/postfix/{{ xfile }}:
     file.managed:
        - source: salt://postfix/post.conf/{{ xfile }}
 {% endfor %}
