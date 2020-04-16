@@ -16,4 +16,6 @@ base:
       - postfix.dkimproxy
 
    'phabricator*':
-      - ss5
+      - utils.git
+      - utils.sudo
+      - database.mysql80.mysql80-client
