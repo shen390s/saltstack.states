@@ -14,3 +14,6 @@ base:
    'postfix*':
       - postfix.postfix
       - postfix.dkimproxy
+
+   'phabricator*':
+      - ss5
