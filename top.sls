@@ -21,3 +21,4 @@ base:
       - utils.sudo
       - database.mysql80.mysql80-client
       - database.mysql80.mysql80-server
+      - lang.php.php74
