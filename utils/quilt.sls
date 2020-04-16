@@ -1,0 +1,3 @@
+quilt:
+   pkg:
+      - installed   
