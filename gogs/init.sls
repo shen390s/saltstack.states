@@ -3,12 +3,16 @@ gogs:
         - enabled
         - require:
             - pkg: gogs
-            - /usr/local/etc/gogs/conf
+            - /usr/local/etc/gogs/conf/app.ini
 
     pkg:
         - installed
 
-/usr/local/etc/gogs/conf:
+/root/patches:
     file.recurse:
-        - source: salt://gogs/conf
+        - source: salt://gogs/patches
 
+"cd /usr/local/etc && QUILT_PATCHES=/root/patches quilt apply gogs.diff":
+    cmd.run:
+        - create:
+          - /usr/local/etc/gogs/conf/app.ini
