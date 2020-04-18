@@ -1,10 +1,4 @@
 gogs:
-    service:
-        - enabled
-        - require:
-            - pkg: gogs
-            - gogs_conf
-
     pkg:
         - installed
 
@@ -17,6 +11,8 @@ gogs:
         - create:
           - /usr/local/etc/gogs/conf/app.ini
 
-gogs_conf:
+gogs.service:
+    - enabled
     - require:
+      - pkg: gogs
       - /usr/local/etc/gogs/conf/app.ini
