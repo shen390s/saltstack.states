@@ -12,7 +12,7 @@ gogs:
     file.recurse:
         - source: salt://gogs/patches
 
-"cd /usr/local/etc && QUILT_PATCHES=/root/patches && export QUILT_PATCHES && quilt apply gogs.diff":
+"cd /usr/local/etc && setenv QUILT_PATCHES /root/patches &&  quilt apply gogs.diff":
     cmd.run:
         - create:
           - /usr/local/etc/gogs/conf/app.ini
