@@ -3,7 +3,7 @@ gogs:
         - enabled
         - require:
             - pkg: gogs
-            - /usr/local/etc/gogs/conf/app.ini
+            - gogs_conf
 
     pkg:
         - installed
@@ -16,3 +16,7 @@ gogs:
     cmd.run:
         - create:
           - /usr/local/etc/gogs/conf/app.ini
+
+gogs_conf:
+    - require:
+      - /usr/local/etc/gogs/conf/app.ini
