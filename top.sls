@@ -1,6 +1,10 @@
 base:
    '*':
-      - jails.default
+      - shell.fish
+      - utils.pstree
+      - utils.the_silver_searcher
+      - utils.quilt
+      - utils.rsync
 
    'ss5*':
       - ss5
