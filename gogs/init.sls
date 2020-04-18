@@ -1,7 +1,3 @@
-gogs:
-    pkg:
-        - installed
-
 /root/patches:
     file.recurse:
         - source: salt://gogs/patches
@@ -12,7 +8,7 @@ gogs:
           - /usr/local/etc/gogs/conf/app.ini
 
 gogs:
-    pkg:
+   pkg:
         - installed 
 
    service:
