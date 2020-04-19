@@ -6,7 +6,7 @@ gogs:
     - enabled
     - require:
       - pkg: gogs
-    watch:
+    - watch:
       - file: /usr/local/etc/gogs/conf/app.ini
 
 /usr/local/etc/gogs/conf/app.ini:
