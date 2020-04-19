@@ -15,10 +15,9 @@ gogs:
   file.managed:
      - source: salt://gogs/conf/gogs-data.sql
 
-  
 /var/db/gogs/data/gogs.db:
   cmd.wait: 
-     - name: cd /var/db/gogs/data && ( cat /tmp/gogs-data.sql | sqlite3 gogs.db )
+     - name: (cat /tmp/gogs-data.sql | sqlite3 gogs.db) && cp gogs.db /var/db/gogs/data/gogs.db 
      - user: git
 
 /usr/local/etc/gogs/conf/app.ini:
