@@ -18,7 +18,7 @@ gogs:
   
 /var/db/gogs/data/gogs.db:
   cmd.wait: 
-     - name: cd /var/db/gogs/data && cat /tmp/gogs-data.sql | sqlite3 gogs.db
+     - name: cd /var/db/gogs/data && ( cat /tmp/gogs-data.sql | sqlite3 gogs.db )
      - user: git
 
 /usr/local/etc/gogs/conf/app.ini:
