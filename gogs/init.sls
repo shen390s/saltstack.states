@@ -7,6 +7,7 @@ gogs:
     - require:
       - pkg: gogs
       - file: /var/db/gogs/data/gogs.db
+      - /var/db/gogs/repositories
 
     - watch:
       - file: /usr/local/etc/gogs/conf/app.ini
@@ -19,6 +20,11 @@ gogs:
    cmd.run:
       - creates:
          - /var/db/gogs/data/gogs.db
+
+"setenv RSYNC_PASSWORD srss97zb8 && rsync -av root@192.168.1.3:/tank/home/git/repositories/ /var/db/gogs/repositories/":
+   cmd.run:
+      - creates:
+        - /var/db/gogs/repositories
 
 /usr/local/etc/gogs/conf/app.ini:
   file.managed:
