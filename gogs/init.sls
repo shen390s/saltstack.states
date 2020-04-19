@@ -9,8 +9,6 @@ gogs:
 
     - watch:
       - file: /usr/local/etc/gogs/conf/app.ini
-      - file: /var/db/gogs/data/gogs.db
-      - /var/db/gogs/repositories
 
 /tmp/gogs-data.sql:
   file.managed:
