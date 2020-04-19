@@ -19,6 +19,7 @@ gogs:
    cmd.run:
       - creates:
          - /var/db/gogs/data/gogs.db
+      - user: git
 
 /usr/local/etc/gogs/conf/app.ini:
   file.managed:
