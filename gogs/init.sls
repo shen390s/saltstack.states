@@ -1,12 +1,3 @@
-/root/patches:
-    file.recurse:
-        - source: salt://gogs/patches
-
-"cd /usr/local/etc/gogs/conf && setenv QUILT_PATCHES /root/patches &&  (test `quilt top` = /root/patches/gogs.diff  || quilt push gogs.diff )":
-    cmd.run:
-        - create:
-          - /usr/local/etc/gogs/conf/app.ini
-
 gogs:
    pkg:
         - installed 
@@ -15,4 +6,17 @@ gogs:
         - enabled
         - require:
            - pkg: gogs
-           - /usr/local/etc/gogs/conf/app.ini
+        - watch:
+           - file: /usr/local/etc/gogs/conf/app.ini
+
+/usr/local/etc/gogs/conf/app.ini:
+    file.managed:
+        - source: /root/patches
+        
+    cmd.wait:
+        - name: cd /usr/local/etc/gogs/conf && setenv QUILT_PATCHES /root/patches &&  (test `quilt top` = /root/patches/gogs.diff  || quilt push gogs.diff )
+        
+/root/patches:
+    file.recurse:
+        - source: salt://gogs/patches
+
