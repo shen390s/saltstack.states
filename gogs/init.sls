@@ -21,7 +21,7 @@ gogs:
       - creates:
          - /var/db/gogs/data/gogs.db
 
-"setenv RSYNC_PASSWORD srss97zb8 && rsync -av root@192.168.1.3:/tank/home/git/repositories/ /var/db/gogs/repositories/":
+"rsync -av 192.168.1.3::git/repositories/ /var/db/gogs/repositories/":
    cmd.run:
       - creates:
         - /var/db/gogs/repositories
