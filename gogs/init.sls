@@ -15,10 +15,10 @@ gogs:
   file.managed:
      - source: salt://gogs/conf/gogs-data.sql
 
-/var/db/gogs/data/gogs.db:
-  cmd.wait: 
-     - name: "cat /tmp/gogs-data.sql | sqlite3 /var/db/gogs/data/gogs.db" 
-     - user: git
+"cat /tmp/gogs-data.sql | sqlite3 /var/db/gogs/data/gogs.db":
+   cmd.run:
+      - creates:
+         - /var/db/gogs/data/gogs.db
 
 /usr/local/etc/gogs/conf/app.ini:
   file.managed:
