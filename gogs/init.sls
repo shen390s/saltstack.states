@@ -11,5 +11,5 @@ gogs:
 
 /usr/local/etc/gogs/conf/app.ini:
   file.managed:
-     - name: salt://gogs/conf/app.ini
+     - source: salt://gogs/conf/app.ini
         
