@@ -3,7 +3,7 @@ gogs:
     - installed 
 
   service:
-    - enabled
+    - running
     - require:
       - pkg: gogs
 
