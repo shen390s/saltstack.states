@@ -1,4 +1,4 @@
-{% set files = ['mail.relay.shenrs.eu.pem', 'master.cf', 'sasl_passwd', 'sasl_passwd.db', 'sasl_senders', 'sasl_senders.db'] %}
+{% set files = ['mail.relay.shenrs.eu.pem', 'master.cf', 'sasl_passwd', 'sasl_senders'] %}
 postfix:
     service:
         - enabled
@@ -21,6 +21,14 @@ postfix:
     file.managed:
        - source: salt://postfix/postfix.conf/{{ xfile }}
 {% endfor %}
+
+postmap /usr/local/etc/postfix/sasl_sender:
+    cmd.run:
+       - creates: /usr/local/etc/postfix/sasl_sender.db
+
+postmap /usr/local/etc/postfix/sasl_passwd:
+    cmd.run:
+       - creates: /usr/local/etc/postfix/sasl_passwd.db
 
 /usr/local/etc/postfix/main.cf:
     file.managed:
