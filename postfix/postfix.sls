@@ -22,9 +22,9 @@ postfix:
        - source: salt://postfix/postfix.conf/{{ xfile }}
 {% endfor %}
 
-postmap /usr/local/etc/postfix/sasl_sender:
+postmap /usr/local/etc/postfix/sasl_senders:
     cmd.run:
-       - creates: /usr/local/etc/postfix/sasl_sender.db
+       - creates: /usr/local/etc/postfix/sasl_senders.db
 
 postmap /usr/local/etc/postfix/sasl_passwd:
     cmd.run:
