@@ -25,13 +25,11 @@ postfix:
     file.managed:
        - source: salt://postfix/postfix.conf/sasl_senders
        - user: root
-       - group: wheel
        - mode: 0600
 
     cmd.wait:
        - name: postmap /usr/local/etc/postfix/sasl_senders
        - user: root
-       - group: wheel
        - watch:
             - file: /usr/local/etc/postfix/sasl_senders
     
@@ -39,13 +37,11 @@ postfix:
     file.managed:
        - source: salt://postfix/postfix.conf/sasl_passwd
        - user: root
-       - group: wheel
        - mode: 0600
 
     cmd.wait:
        - name: postmap /usr/local/etc/postfix/sasl_passwd
        - user: root
-       - group: wheel
        - watch:
             - file: /usr/local/etc/postfix/sasl_passwd
 
