@@ -1,4 +1,4 @@
-{% set files = ['mail.relay.shenrs.eu.pem', 'master.cf', 'sasl_passwd', 'sasl_senders'] %}
+{% set files = ['mail.relay.shenrs.eu.pem', 'master.cf'] %}
 postfix:
     service:
         - running
