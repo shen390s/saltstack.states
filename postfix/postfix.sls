@@ -1,7 +1,7 @@
 {% set files = ['mail.relay.shenrs.eu.pem', 'master.cf', 'sasl_passwd', 'sasl_senders'] %}
 postfix:
     service:
-        - enabled
+        - running
         - require:
             - pkg: postfix-sasl
             - /usr/local/etc/postfix/master.cf
