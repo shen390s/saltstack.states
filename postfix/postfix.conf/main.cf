@@ -693,3 +693,5 @@ smtpd_sasl_security_options = noanonymous,noplaintext
 
 smtpd_sasl_path = smtpd
 mydomain = shenrs.eu
+
+smtp_generic_maps = hash:/usr/local/etc/postfix/generic

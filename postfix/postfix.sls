@@ -9,6 +9,7 @@ postfix:
             - file: /usr/local/etc/postfix/master.cf
             - file: /usr/local/etc/postfix/sasl_senders
             - file: /usr/local/etc/postfix/sasl_passwd
+            - file: /usr/local/etc/postfix/generic
             - file: /usr/local/etc/postfix/mail.relay.shenrs.eu.pem
             - file: /usr/local/etc/postfix/main.cf
 
@@ -50,6 +51,17 @@ postfix:
         - source: salt://postfix/postfix.conf/{{ xfile }}
         - template: jinja
 {% endfor %}
+
+/usr/local/etc/postfix/generic:
+    file.managed:
+        - source: salt://postfix/postfix.conf/generic
+        - template: jinja
+
+    cmd.wait:
+        - name: postmap /usr/local/etc/postfix/generic
+        - user: root
+        - watch:
+              - file: /usr/local/etc/postfix/generic
 
 "cd /etc/mail && make":
     cmd.run:
