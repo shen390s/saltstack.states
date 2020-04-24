@@ -1,6 +1,6 @@
 cyrus-imapd:
     service:
-        - name: imapd
+        - name: cyrus_imapd
         - running
         - enable: True
         - require:
