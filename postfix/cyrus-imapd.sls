@@ -25,3 +25,13 @@ cyrus-imapd:
     cmd.run:
         - creates:
           - /var/imap
+
+"mkdir -p /var/imap/socket && chown -Rf cyrus:cyrus /var/imap/socket":
+    cmd.run:
+        - creates:
+          - /var/imap/socket
+
+"mkdir -p /var/imap/sync && chown -Rf cyrus:cyrus /var/imap/sync":
+    cmd.run:
+        - creates:
+          - /var/imap/sync
