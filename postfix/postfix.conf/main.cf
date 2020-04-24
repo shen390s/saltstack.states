@@ -398,7 +398,7 @@ mynetworks_style = host
 # "postfix reload" to eliminate the delay.
 #
 #alias_maps = dbm:/etc/mail/aliases
-#alias_maps = hash:/etc/aliases
+alias_maps = hash:/etc/mail/aliases
 #alias_maps = hash:/etc/aliases, nis:mail.aliases
 #alias_maps = netinfo:/aliases
 
