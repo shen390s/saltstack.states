@@ -20,3 +20,8 @@ cyrus-imapd:
 /usr/local/etc/cyrus.conf:
     file.managed:
         - source: salt://postfix/imapd.conf/cyrus.conf
+
+"mkdir -p /var/imap && chown -Rf cyrus:cyrus /var/imap":
+    cmd.run:
+        - creates:
+          - /var/imap
