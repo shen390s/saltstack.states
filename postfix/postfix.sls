@@ -1,4 +1,4 @@
-{% set files = ['mail.relay.shenrs.eu.pem', 'master.cf'] %}
+{% set files = ['master.cf', 'main.cf'] %}
 postfix:
     service:
         - running
@@ -15,11 +15,9 @@ postfix:
         - name: postfix-sasl
         - installed
 
-{% for xfile in files %}
-/usr/local/etc/postfix/{{ xfile }}:
+/usr/local/etc/postfix/mail.relay.shenrs.eu.pem:
     file.managed:
-       - source: salt://postfix/postfix.conf/{{ xfile }}
-{% endfor %}
+       - source: salt://postfix/postfix.conf/mail.relay.shenrs.eu
 
 /usr/local/etc/postfix/sasl_senders:
     file.managed:
@@ -45,10 +43,12 @@ postfix:
        - watch:
             - file: /usr/local/etc/postfix/sasl_passwd
 
-/usr/local/etc/postfix/main.cf:
+{% for xfile in files %}
+/usr/local/etc/postfix/{{ xfile }}:
     file.managed:
-        - source: salt://postfix/postfix.conf/main.cf
+        - source: salt://postfix/postfix.conf/{{ xfile }}
         - template: jinja
+{% endfor %}
 
 "cd /etc/mail && make":
     cmd.run:
