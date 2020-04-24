@@ -13,4 +13,5 @@ dkimproxy_out:
 /usr/local/etc/dkimproxy_out.conf:
     file.managed:
         - source: salt://postfix/dkimproxy/dkimproxy_out.conf
+        - template: jinja
 
