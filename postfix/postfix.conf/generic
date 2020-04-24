@@ -1,1 +1,1 @@
-@{{ grains['fqdn'] }} shenrs.eu
+@{{ grains['fqdn'] }} @shenrs.eu
