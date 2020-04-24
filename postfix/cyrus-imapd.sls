@@ -35,3 +35,8 @@ cyrus-imapd:
     cmd.run:
         - creates:
           - /var/imap/sync
+
+"mkdir -p /var/imap/db && chown -Rf cyrus:cyrus /var/imap/db":
+    cmd.run:
+        - creates:
+          - /var/imap/db
