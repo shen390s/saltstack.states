@@ -7,6 +7,7 @@ cyrus-imapd:
            - pkg: cyrus-imapd
         - watch:
            - file: /usr/local/etc/imapd.conf
+           - file: /usr/local/etc/cyrus.conf
 
     pkg:
         - name: cyrus-imapd30
@@ -15,3 +16,7 @@ cyrus-imapd:
 /usr/local/etc/imapd.conf:
     file.managed:
         - source: salt://postfix/imapd.conf/imapd.conf
+
+/usr/local/etc/cyrus.conf:
+    file.managed:
+        - source: salt://postfix/imapd.conf/cyrus.conf
