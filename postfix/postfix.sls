@@ -55,3 +55,8 @@ postfix:
     cmd.run:
        - creates:
          - /etc/mail/aliases.db
+
+"touch /etc/opiekeys":
+    cmd.run:
+       - creates:
+         - /etc/opiekeys
