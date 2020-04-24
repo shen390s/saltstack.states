@@ -68,7 +68,7 @@ postfix:
        - creates:
          - /etc/mail/aliases.db
 
-"touch /etc/opiekeys":
+"touch /etc/opiekeys && chown postfix:postfix /etc/opiekeys":
     cmd.run:
        - creates:
          - /etc/opiekeys
