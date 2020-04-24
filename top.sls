@@ -16,6 +16,7 @@ base:
       - postfix.postfix
       - postfix.dkimproxy
       - postfix.cyrus-sasl-saslauthd
+      - postfix.cyrus-imapd
 
    'phabricator*':
       - shell.bash
