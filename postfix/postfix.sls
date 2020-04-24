@@ -18,7 +18,7 @@ postfix:
 
 /usr/local/etc/postfix/mail.relay.shenrs.eu.pem:
     file.managed:
-       - source: salt://postfix/postfix.conf/mail.relay.shenrs.eu
+       - source: salt://postfix/postfix.conf/mail.relay.shenrs.eu.pem
 
 /usr/local/etc/postfix/sasl_senders:
     file.managed:
