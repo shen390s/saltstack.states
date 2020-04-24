@@ -1,5 +1,6 @@
 cyrus-imapd:
     service:
+        - name: cyrus_imapd
         - running
         - enable: True
         - require:
