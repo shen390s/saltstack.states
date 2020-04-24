@@ -8,6 +8,7 @@ cyrus-imapd:
            - file: /usr/local/etc/imapd.conf
 
     pkg:
+        - name: cyrus-imapd30
         - installed
 
 /usr/local/etc/imapd.conf:
