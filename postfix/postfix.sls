@@ -2,6 +2,7 @@
 postfix:
     service:
         - running
+        - enable: True
         - require:
             - pkg: postfix-sasl
         - watch:

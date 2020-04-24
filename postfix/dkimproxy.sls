@@ -1,6 +1,7 @@
 dkimproxy_out:
     service:
         - running
+	- enable: True
         - require:
             - pkg: dkimproxy
             - /usr/local/etc/dkimproxy_out.conf
