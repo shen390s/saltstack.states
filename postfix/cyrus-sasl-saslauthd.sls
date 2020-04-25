@@ -1,6 +1,6 @@
 saslauthd:
     service:
-       - running: ["-a sasldb"]
+       - running
        - enable: True
        - require:
          - pkg: cyrus-sasl-saslauthd
