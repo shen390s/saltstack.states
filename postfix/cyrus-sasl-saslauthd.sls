@@ -1,9 +1,9 @@
 saslauthd:
     service:
        - running
+	 - kwargs:
+              saslauthd_flags: '-a sasldb'
        - enable: True
-       - kwargs:
-           flags: '-a sasldb'
        - require:
          - pkg: cyrus-sasl-saslauthd
 
