@@ -21,30 +21,18 @@ cyrus-imapd:
     file.managed:
         - source: salt://postfix/imapd.conf/cyrus.conf
 
-"mkdir -p /var/imap && chown -Rf cyrus:cyrus /var/imap":
-    cmd.run:
-        - creates:
-          - /var/imap
+{% set directories = ['/var/imap', '/var/imap/socket', '/var/imap/sync','/var/imap/db','/var/spool/imap'] %}
 
-"mkdir -p /var/imap/socket && chown -Rf cyrus:cyrus /var/imap/socket":
-    cmd.run:
-        - creates:
-          - /var/imap/socket
-
-"mkdir -p /var/imap/sync && chown -Rf cyrus:cyrus /var/imap/sync":
-    cmd.run:
-        - creates:
-          - /var/imap/sync
-
-"mkdir -p /var/imap/db && chown -Rf cyrus:cyrus /var/imap/db":
-    cmd.run:
-        - creates:
-          - /var/imap/db
-
-"mkdir -p /var/spool/imap && chown -Rf cyrus:cyrus /var/spool/imap":
-    cmd.run:
-        - creates:
-          - /var/spool/imap
+{% for xdir directories %}
+{{ xdir }}:
+    file.directory:
+       - user: cyrus
+       - group: cyrus
+       - mkdirs: True
+       - recurse:
+         - user
+         - group
+{% endfor %}
 
 # create unix user: rshen, apple, ann
 # create mailbox
