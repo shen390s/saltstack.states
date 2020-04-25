@@ -1,6 +1,5 @@
 saslauthd:
     service:
-       - name: saslauthd -a sasldb
        - running
        - enable: True
        - require:
