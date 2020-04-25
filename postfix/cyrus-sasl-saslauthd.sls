@@ -1,7 +1,7 @@
 saslauthd:
     service:
        - running
-	 - kwargs:
+           - kwargs:
               saslauthd_flags: '-a sasldb'
        - enable: True
        - require:
