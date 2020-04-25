@@ -45,3 +45,11 @@ cyrus-imapd:
     cmd.run:
         - creates:
           - /var/spool/imap
+
+# create unix user: rshen, apple, ann
+# create mailbox
+# cyradm -u cyrus <ip>
+# cm user/rshen
+# cm user/apple
+# cm user/ann
+
