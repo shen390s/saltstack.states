@@ -23,7 +23,7 @@ cyrus-imapd:
 
 {% set directories = ['/var/imap', '/var/imap/socket', '/var/imap/sync','/var/imap/db','/var/spool/imap'] %}
 
-{% for xdir directories %}
+{% for xdir in directories %}
 {{ xdir }}:
     file.directory:
        - user: cyrus
