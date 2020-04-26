@@ -4,6 +4,7 @@ gogs:
 
   service:
     - running
+    - enable: True
     - require:
       - pkg: gogs
 
