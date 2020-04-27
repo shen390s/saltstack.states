@@ -34,11 +34,11 @@ mysql80-server:
       - require:
         - init_data_base
 
-/tmp/db.sql:
+/tmp/db.sql.bz2:
    file.managed:
-      - source: salt://phabricator/config/db.sql
+      - source: salt://phabricator/config/db.sql.bz2
 
 init_data_base:
    cmd.wait: 
-      - name: mysql </tmp/db.sql && /usr/local/lib/php/phabricator/bin/storage upgrade
+      - name: (cat /tmp/db.sql.bz2 |bzip2 -d | mysql) && /usr/local/lib/php/phabricator/bin/storage upgrade
    
