@@ -5,6 +5,8 @@ phabricator:
        - enable: True
        - require:
          - pkg: phabricator
+         - database.mysql80.mysql80-client
+         - database.mysql80.mysql80-server
 
        - watch:
          - file: /usr/local/lib/php/phabricator/conf/local/local.json
