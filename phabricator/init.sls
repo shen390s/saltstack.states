@@ -27,7 +27,7 @@ mysql80-server:
    pkg:
       - installed
 
-   server:
+   service:
       - name: mysql-server
       - running
       - enable: True
