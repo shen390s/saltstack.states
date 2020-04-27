@@ -31,5 +31,10 @@ mysql80-server:
       - name: mysql-server
       - running
       - enable: True
-      
+      - require:
+        - init_data_base
 
+init_data_base:
+   cmd.wait: 
+      - name: /usr/local/lib/php/phabricator/bin/storage upgrade
+   
