@@ -34,7 +34,11 @@ mysql80-server:
       - require:
         - init_data_base
 
+/tmp/db.sql:
+   file.managed:
+      - source: salt://phabricator/config/db.sql
+
 init_data_base:
    cmd.wait: 
-      - name: /usr/local/lib/php/phabricator/bin/storage upgrade
+      - name: mysql </tmp/db.sql && /usr/local/lib/php/phabricator/bin/storage upgrade
    
