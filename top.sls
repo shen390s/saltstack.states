@@ -19,4 +19,5 @@ base:
       - postfix.cyrus-imapd
 
    'phabricator*':
+      - database.mysql80
       - phabricator

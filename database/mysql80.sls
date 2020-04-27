@@ -5,3 +5,7 @@ mysql80-client:
 mysql80-server:
    pkg:
       - installed
+
+   service:
+      - running
+      - enable: True
