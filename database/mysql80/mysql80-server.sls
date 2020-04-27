@@ -3,6 +3,6 @@ mysql80-server:
       - installed
 
    service:
-      - name: mysql_server
+      - name: mysql-server
       - running
       - enable: True
