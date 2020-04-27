@@ -19,4 +19,4 @@ base:
       - postfix.cyrus-imapd
 
    'phabricator*':
-      - phabricator-php73
+      - phabricator
