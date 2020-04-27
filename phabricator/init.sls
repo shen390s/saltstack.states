@@ -14,4 +14,4 @@ phabricator:
 
 /usr/local/lib/php/phabricator/conf/local/local.json:
     file.managed:
-       - source: salt://phabricator/conf/local.json
+       - source: salt://phabricator/config/local.json
