@@ -1,0 +1,19 @@
+{
+  "phd.user": "www",
+  "phd.log-directory": "/var/log",
+  "mysql.host": "localhost",
+  "mysql.port": "3306",
+  "mysql.user": "phabric",
+  "mysql.pass": "phabricatorKiller$",
+  "repository.default-local-path": "/var/phabricator/repo",
+  "storage.local-disk.path": "/var/phabricator/files",
+  "phabricator.base-uri": "http://phabricator.shenrs.eu/",
+  "phabricator.show-prototypes": true,
+  "diffusion.ssh-user": "git",
+  "diffusion.ssh-port": 22,
+  "phpmailer.smtp-host": "mail.shenrs.eu",
+  "phpmailer.smtp-port": 25,
+  "phpmailer.smtp-user": "phabricator@shenrs.eu",
+  "phpmailer.smtp-password": "phpMailKiller$",
+  "phpmailer.smtp-protocol": "tls"
+}
