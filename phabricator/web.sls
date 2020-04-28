@@ -1,18 +1,18 @@
-php-fpm:
-   pkg:
-       - installed
-
-   service:
-       - running
-       - enable: True
-       - watch:
-         - file: /usr/local/etc/php-fpm.d/www.conf
-
-/usr/local/etc/php-fpm.d/www.conf:
-   file.managed:
-       - salt://pahbricator/config/www.conf
-       - template: jinja
-
+#php-fpm:
+#   pkg:
+#       - installed
+#
+#   service:
+#       - running
+#       - enable: True
+#       - watch:
+#         - file: /usr/local/etc/php-fpm.d/www.conf
+#
+#/usr/local/etc/php-fpm.d/www.conf:
+#   file.managed:
+#       - salt://pahbricator/config/www.conf
+#       - template: jinja
+#
 nginx:
    pkg:
        - installed
