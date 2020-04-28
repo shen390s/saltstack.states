@@ -70,7 +70,7 @@ php-fpm:
        - running
        - enable: True
        - require:
-         file: /usr/local/etc/php-fpm.d/www.conf
+         - file: /usr/local/etc/php-fpm.d/www.conf
 
 /usr/local/etc/php-fpm.d/www.conf:
    file.managed:
