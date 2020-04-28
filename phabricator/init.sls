@@ -62,3 +62,38 @@ update_schema:
        - watch:
           - file: /usr/local/lib/php/phabricator/conf/local/local.json
    
+php-fpm:
+   pkg:
+       - installed
+
+   service:
+       - running
+       - enable: True
+       - require:
+         file: /usr/local/etc/php-fpm.d/www.conf
+
+/usr/local/etc/php-fpm.d/www.conf:
+   file.managed:
+       - salt://pahbricator/config/www.conf
+       - template: jinja
+
+nginx:
+   pkg:
+       - installed
+
+   service:
+       - running
+       - enable: True
+       - require:
+         - file: /usr/local/etc/nginx/nginx.conf
+         - file: /usr/local/etc/nginx/phabricator
+
+/usr/local/etc/nginx/nginx.conf:
+  file.managed:
+      - salt://phabricator/config/nginx.conf
+      - template: jinja
+
+/usr/local/etc/nginx/phabricator:
+  file.managed:
+      - salt://phabricator/config/phabricator
+      - template: jinja
