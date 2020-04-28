@@ -7,6 +7,7 @@ phabricator:
          - pkg: phabricator
          - pkg: mysql80-client
          - service: mysql-server
+         - service: nginx
 
        - watch:
          - file: /usr/local/lib/php/phabricator/conf/local/local.json
@@ -70,7 +71,7 @@ php-fpm:
        - running
        - enable: True
        - require:
-         - file: /usr/local/etc/php-fpm.d/www.conf
+         - /usr/local/etc/php-fpm.d/www.conf
 
 /usr/local/etc/php-fpm.d/www.conf:
    file.managed:
@@ -85,8 +86,9 @@ nginx:
        - running
        - enable: True
        - require:
-         - file: /usr/local/etc/nginx/nginx.conf
-         - file: /usr/local/etc/nginx/phabricator
+         - /usr/local/etc/nginx/nginx.conf
+         - /usr/local/etc/nginx/phabricator
+         - service: php-fpm
 
 /usr/local/etc/nginx/nginx.conf:
   file.managed:
