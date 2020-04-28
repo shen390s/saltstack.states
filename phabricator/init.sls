@@ -70,7 +70,7 @@ php-fpm:
    service:
        - running
        - enable: True
-       - watch::
+       - watch:
          - file: /usr/local/etc/php-fpm.d/www.conf
 
 /usr/local/etc/php-fpm.d/www.conf:
@@ -85,9 +85,10 @@ nginx:
    service:
        - running
        - enable: True
+       - watch:
+         - file: /usr/local/etc/nginx/nginx.conf
+         - file: /usr/local/etc/nginx/phabricator
        - require:
-         - /usr/local/etc/nginx/nginx.conf
-         - /usr/local/etc/nginx/phabricator
          - service: php-fpm
 
 /usr/local/etc/nginx/nginx.conf:
