@@ -1,5 +1,6 @@
 php-fpm:
    pkg:
+       - name: php73
        - installed
 
    service:
