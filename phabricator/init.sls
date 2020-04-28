@@ -43,7 +43,7 @@ mysql80-server:
 
 init_data_base:
     cmd.wait:
-       - name: /usr/local/bin/mysqld_safe --initialize-insecure --user=mysql
+       - name: /usr/local/bin/mysqld_safe --initialize-insecure --user=mysql && service mysql-server onestart
  
 /tmp/fixuser.sql:
     file.managed:
