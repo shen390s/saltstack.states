@@ -22,7 +22,7 @@ nginx:
        - enable: True
        - watch:
          - file: /usr/local/etc/nginx/nginx.conf
-         - file: /usr/local/etc/nginx/phabricator
+#         - file: /usr/local/etc/nginx/phabricator
 #       - require:
 #         - service: php-fpm
 
@@ -31,7 +31,7 @@ nginx:
       - salt://phabricator/config/nginx.conf
       - template: jinja
 
-/usr/local/etc/nginx/phabricator:
-  file.managed:
-      - salt://phabricator/config/phabricator
-      - template: jinja
+#/usr/local/etc/nginx/phabricator:
+#  file.managed:
+#      - salt://phabricator/config/phabricator
+#      - template: jinja
