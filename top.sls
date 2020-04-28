@@ -20,5 +20,5 @@ base:
 
    'phabricator*':
       - phabricator.mysql
-      - phabricator.web
+#      - phabricator.web
       - phabricator.phabricator
