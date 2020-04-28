@@ -11,7 +11,7 @@ php-fpm:
 
 /usr/local/etc/php-fpm.d/www.conf:
    file.managed:
-       - source: salt://pahbricator/config/www.conf
+       - source: salt://phabricator/config/www.conf
        - template: jinja
 
 nginx:
