@@ -33,12 +33,31 @@ mysql80-server:
       - enable: True
       - require:
         - init_data_base
+        - fixuser
+        - update_schema
 
-/tmp/db.sql.bz2:
-   file.managed:
-      - source: salt://phabricator/config/db.sql.bz2
+#/tmp/db.sql.bz2:
+#   file.managed:
+#      - source: salt://phabricator/config/db.sql.bz2
 
 init_data_base:
+    cmd.wait:
+       - name: /usr/local/bin/mysqld_safe --initialize-insecure --user=mysql
+ 
+/tmp/fixuser.sql:
+    file.managed:
+       - source: salt://phabricator/config/fixuser.sql
+       - template: jinja
+
+fixuser:
    cmd.wait: 
-      - name: (cat /tmp/db.sql.bz2 |bzip2 -d | mysql) && /usr/local/lib/php/phabricator/bin/storage upgrade
+       - name: cat /tmp/fixuser.sql | mysql -u root --skip-password
+       - watch:
+           - file: /tmp/fixuser.sql
+
+update_schema:
+   cmd.wait:
+       - name: cd /usr/local/lib/php/phabricator/ && ./bin/storage upgrade
+       - watch:
+          - file: /usr/local/lib/php/phabricator/conf/local/local.json
    
