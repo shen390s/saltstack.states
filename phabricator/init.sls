@@ -58,7 +58,7 @@ fixuser:
 
 update_schema:
    cmd.wait:
-       - name: cd /usr/local/lib/php/phabricator/ && ./bin/storage upgrade
+       - name: cd /usr/local/lib/php/phabricator/ && ./bin/storage upgrade --force
        - watch:
           - file: /usr/local/lib/php/phabricator/conf/local/local.json
    
