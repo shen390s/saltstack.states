@@ -23,8 +23,8 @@ nginx:
        - watch:
          - file: /usr/local/etc/nginx/nginx.conf
          - file: /usr/local/etc/nginx/phabricator
-       - require:
-         - service: php-fpm
+#       - require:
+#         - service: php-fpm
 
 /usr/local/etc/nginx/nginx.conf:
   file.managed:
