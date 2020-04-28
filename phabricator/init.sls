@@ -18,6 +18,7 @@ phabricator:
 /usr/local/lib/php/phabricator/conf/local/local.json:
     file.managed:
        - source: salt://phabricator/config/local.json
+       - template: jinja
 
 mysql80-client:
    pkg:
