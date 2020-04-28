@@ -70,8 +70,8 @@ php-fpm:
    service:
        - running
        - enable: True
-       - require:
-         - /usr/local/etc/php-fpm.d/www.conf
+       - watch::
+         - file: /usr/local/etc/php-fpm.d/www.conf
 
 /usr/local/etc/php-fpm.d/www.conf:
    file.managed:
