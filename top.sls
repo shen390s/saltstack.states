@@ -20,6 +20,7 @@ base:
       - postfix.cyrus-imapd
 
    'phabricator*':
+      - utils.pygment
       - phabricator.mysql
       - phabricator.web
       - phabricator.phabricator
