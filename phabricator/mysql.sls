@@ -12,25 +12,29 @@ mysql80-server:
       - enable: True
       - require:
         - file: /usr/local/etc/mysql/my.cnf
-        - file: /var/db/mysql/.db.init.ok
-        - file: /var/db/mysql/.fixuser.ok
+        - db-init-ok
+        - db-fixusr-ok
 
 /usr/local/etc/mysql/my.cnf:
     file.managed:
         - source: salt://phabricator/config/my.cnf
         - template: jinja
 
-/var/db/mysql/.db.init.ok:
+db-init-ok:
     cmd.run:
        - name: /usr/local/bin/mysqld_safe --initialize-insecure --user=mysql && service mysql-server onestart && touch /var/db/mysql/.db.init.ok
+       - creates:
+           - /var/db/mysql/.db.init.ok
 
 /tmp/fixuser.sql:
     file.managed:
        - source: salt://phabricator/config/fixuser.sql
        - template: jinja
 
-/var/db/mysql/.fixuser.ok:
+db-fixusr-ok:
    cmd.run:
        - name: (cat /tmp/fixuser.sql | mysql -u root --skip-password) && touch /var/db/mysql/.fixuser.ok
        - watch:
            - file: /tmp/fixuser.sql
+       - creates:
+           - /var/db/mysql/.fixuser.ok 
