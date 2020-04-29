@@ -21,6 +21,11 @@ phabricator:
        - source: salt://phabricator/config/local.json
        - template: jinja
 
+/var/phabricator:
+    file.directory:
+       - user: root
+       - mkdirs: True
+
 /var/phabricator/repo:
     file.directory:
        - user: root
