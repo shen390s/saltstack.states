@@ -21,7 +21,7 @@ mysql80-server:
         - template: jinja
 
 /var/db/mysql/.db.init.ok:
-    cmd.wait:
+    cmd.run:
        - name: /usr/local/bin/mysqld_safe --initialize-insecure --user=mysql && service mysql-server onestart && touch /var/db/mysql/.db.init.ok
 
 /tmp/fixuser.sql:
@@ -30,7 +30,7 @@ mysql80-server:
        - template: jinja
 
 /var/db/mysql/.fixuser.ok:
-   cmd.wait:
+   cmd.run:
        - name: (cat /tmp/fixuser.sql | mysql -u root --skip-password) && touch /var/db/mysql/.fixuser.ok
        - watch:
            - file: /tmp/fixuser.sql
