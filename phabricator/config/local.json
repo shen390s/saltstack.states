@@ -1,4 +1,18 @@
+{% set host = grains['fqdn'].split('.') |  first()  %}
 {
+  "cluster.mailers": [
+    {
+      "key": "stmp-mailer",
+      "type": "smtp",
+      "options": {
+        "host": "{{ host }}",
+        "port": 25,
+        "user": "admin@shenrs.eu",
+        "password": "AdminKiller2020",
+        "protocol": "tls"
+      }
+    }
+  ],
   "phd.user": "www",
   "phd.log-directory": "/var/log",
   "mysql.host": "{{ grains['ipv4'] | first() }}",
@@ -7,13 +21,8 @@
   "mysql.pass": "srss97zb8",
   "repository.default-local-path": "/var/phabricator/repo",
   "storage.local-disk.path": "/var/phabricator/files",
-  "phabricator.base-uri": "http://phabricator.shenrs.eu/",
+  "phabricator.base-uri": "http://{{ host }}.shenrs.eu/",
   "phabricator.show-prototypes": true,
   "diffusion.ssh-user": "git",
   "diffusion.ssh-port": 2022,
-  "phpmailer.smtp-host": "mail.shenrs.eu",
-  "phpmailer.smtp-port": 25,
-  "phpmailer.smtp-user": "phabricator@shenrs.eu",
-  "phpmailer.smtp-password": "phpMailKiller$",
-  "phpmailer.smtp-protocol": "tls"
 }
