@@ -1,6 +1,7 @@
+{% set host = grains['fqdn'].split('.') | first () %}
  server {
       listen 80;
-      server_name {{ grains['ipv4'] | first() }};
+      server_name {{ host }}.shenrs.eu;
       root        /usr/local/lib/php/phabricator/webroot;
 
       location / {
