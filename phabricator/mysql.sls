@@ -11,8 +11,13 @@ mysql80-server:
       - running
       - enable: True
       - require:
+        - file: /usr/local/etc/mysql/my.cnf
         - file: /var/db/mysql/.db.init.ok
         - file: /var/db/mysql/.fixuser.ok
+
+/usr/local/etc/mysql/my.cnf:
+    file.managed:
+        - source: salt://phabricator/config/my.cnf
 
 /var/db/mysql/.db.init.ok:
     cmd.wait:
