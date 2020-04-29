@@ -16,7 +16,10 @@ mysql80-server:
 
 init_data_base:
     cmd.wait:
-       - name: /usr/local/bin/mysqld_safe --initialize-insecure --user=mysql && service mysql-server onestart
+       - name: /usr/local/bin/mysqld_safe --initialize-insecure --user=mysql && service mysql-server onestart && touch /var/db/mysql/.db.init.ok
+       - watch: 
+           - file: /var/db/mysql/.db.init.ok
+
 
 /tmp/fixuser.sql:
     file.managed:
@@ -25,6 +28,6 @@ init_data_base:
 
 fixuser:
    cmd.wait:
-       - name: cat /tmp/fixuser.sql | mysql -u root --skip-password
+       - name: (cat /tmp/fixuser.sql | mysql -u root --skip-password) && touch /var/db/mysql/.fixuser.ok
        - watch:
-           - file: /tmp/fixuser.sql
+           - file: /var/db/mysql/.fixuser.ok

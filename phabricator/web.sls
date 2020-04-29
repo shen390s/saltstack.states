@@ -8,11 +8,16 @@ php-fpm:
        - enable: True
        - watch:
          - file: /usr/local/etc/php-fpm.d/www.conf
+         - file: /usr/local/etc/php.ini
 
 /usr/local/etc/php-fpm.d/www.conf:
    file.managed:
        - source: salt://phabricator/config/www.conf
        - template: jinja
+
+/usr/local/etc/php.ini:
+   file.managed:
+       - source: salt://phabricator/config/php.ini
 
 nginx:
    pkg:

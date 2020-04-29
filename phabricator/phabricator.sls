@@ -26,6 +26,11 @@ phabricator:
        - user: root
        - mkdirs: True
 
+/var/phabricator/files:
+    file.directory:
+       - user: root
+       - mkdirs: True
+
 #/tmp/db.sql.bz2:
 #   file.managed:
 #      - source: salt://phabricator/config/db.sql.bz2
