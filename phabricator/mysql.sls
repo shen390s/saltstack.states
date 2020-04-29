@@ -18,6 +18,7 @@ mysql80-server:
 /usr/local/etc/mysql/my.cnf:
     file.managed:
         - source: salt://phabricator/config/my.cnf
+        - template: jinja
 
 /var/db/mysql/.db.init.ok:
     cmd.wait:
