@@ -5,6 +5,7 @@ base:
       - utils.the_silver_searcher
       - utils.quilt
       - utils.rsync
+      - utils.sshd
 
    'ss5*':
       - ss5

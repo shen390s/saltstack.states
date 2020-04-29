@@ -21,6 +21,11 @@ phabricator:
        - source: salt://phabricator/config/local.json
        - template: jinja
 
+/var/phabricator/repo:
+    file.directory:
+       - user: root
+       - mkdirs: True
+
 #/tmp/db.sql.bz2:
 #   file.managed:
 #      - source: salt://phabricator/config/db.sql.bz2
