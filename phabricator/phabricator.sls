@@ -41,7 +41,7 @@ phabricator:
 #      - source: salt://phabricator/config/db.sql.bz2
 
 update_schema:
-   cmd.wait:
+   cmd.run:
        - name: cd /usr/local/lib/php/phabricator/ && ./bin/storage upgrade --force 
        - watch:
           - file: /usr/local/lib/php/phabricator/conf/local/local.json
