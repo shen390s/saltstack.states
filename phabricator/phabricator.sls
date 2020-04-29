@@ -27,7 +27,7 @@ phabricator:
 
 update_schema:
    cmd.wait:
-       - name: cd /usr/local/lib/php/phabricator/ && ./bin/storage upgrade --force
+       - name: cd /usr/local/lib/php/phabricator/ && ./bin/storage upgrade 
        - watch:
           - file: /usr/local/lib/php/phabricator/conf/local/local.json
    
