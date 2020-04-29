@@ -23,17 +23,17 @@ phabricator:
 
 /var/phabricator:
     file.directory:
-       - user: root
+       - user: www
        - mkdirs: True
 
 /var/phabricator/repo:
     file.directory:
-       - user: root
+       - user: www
        - mkdirs: True
 
 /var/phabricator/files:
     file.directory:
-       - user: root
+       - user: www
        - mkdirs: True
 
 #/tmp/db.sql.bz2:
