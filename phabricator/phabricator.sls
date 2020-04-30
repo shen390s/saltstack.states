@@ -36,9 +36,15 @@ phabricator:
        - user: www
        - mkdirs: True
 
-#/tmp/db.sql.bz2:
-#   file.managed:
-#      - source: salt://phabricator/config/db.sql.bz2
+/tmp/db.sql.bz2:
+   file.managed:
+      - source: salt://phabricator/config/db.sql.bz2
+
+restore_db:
+   cmd.run:
+       - name: cat /tmp/db.sql.bz2 |bzip2 -d | mysql -u root --password='srss97zb8'
+       - watch:
+         - file: /tmp/db.sql.bz2
 
 update_schema:
    cmd.run:
@@ -46,3 +52,4 @@ update_schema:
        - watch:
           - file: /usr/local/lib/php/phabricator/conf/local/local.json
    
+
