@@ -17,3 +17,27 @@ asciidoctor-pdf:
 asciidoctor-diagram:
    gem.installed:
       - user: root
+
+asciidoctor-plantuml:
+   gem.installed:
+      - user: root
+
+
+asciidoctor-revealjs:
+   gem.installed:
+      - user: root
+
+
+asciidoctor-mathematical:
+   gem.installed:
+      - user: root
+
+
+asciidoctor-pdf-cjk:
+   gem.installed:
+      - user: root
+
+asciidoctor-kindle:
+   gem.installed:
+      - user: root
+
