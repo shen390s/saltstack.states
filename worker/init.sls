@@ -2,6 +2,7 @@ rshen:
    user.present:
       - fullname: Rongsong Shen
       - uid: 1116
+      - home: /usr/home/rshen
       - groups:
           - wheel
 
