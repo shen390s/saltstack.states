@@ -6,6 +6,7 @@ base:
       - utils.quilt
       - utils.rsync
       - utils.sshd
+      - utils.tmux
 
    'ss5*':
       - ss5
@@ -28,3 +29,4 @@ base:
    'worker*':
       - lang.ruby.ruby27
       - utils.asciidoctor
+      - editors.emacs
