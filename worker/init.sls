@@ -13,8 +13,7 @@ rshen:
 sshkeys:
    ssh_auth.present:
       - user: rshen
-      - source: 
-         - salt://ssh_key/id_rsa.pub
+      - source: salt://ssh_key/id_rsa.pub
 
 asciidoctor:
    gem.installed:
