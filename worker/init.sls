@@ -1,7 +1,10 @@
 rshen:
+   pkg.installed:
+      - fish
    user.present:
       - fullname: Rongsong Shen
       - uid: 1116
+      - shell: /usr/local/bin/fish
       - home: /usr/home/rshen
       - groups:
           - wheel
