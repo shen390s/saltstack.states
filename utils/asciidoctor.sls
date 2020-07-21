@@ -1,4 +1,4 @@
-rubygem-asciidoctor
+rubygem-asciidoctor:
     pkg:
        - installed
 
