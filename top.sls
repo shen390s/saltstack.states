@@ -24,3 +24,7 @@ base:
       - phabricator.mysql
       - phabricator.web
       - phabricator.phabricator
+
+   'worker*':
+      - lang.ruby.ruby27
+      - utils.asciidoctor
