@@ -30,3 +30,4 @@ base:
       - lang.ruby.ruby27
       - utils.asciidoctor
       - editors.emacs
+      - worker
