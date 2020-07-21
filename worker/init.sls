@@ -1,6 +1,7 @@
 rshen:
-   pkg.installed:
-      - fish
+   require:
+      - pkg: fish
+      
    user.present:
       - fullname: Rongsong Shen
       - uid: 1116
@@ -8,6 +9,12 @@ rshen:
       - home: /usr/home/rshen
       - groups:
           - wheel
+
+sshkeys:
+   ssh_auth.present:
+      - user: rshen
+      - source: 
+         - salt://ssh_key/id_rsa.pub
 
 asciidoctor:
    gem.installed:

@@ -29,4 +29,5 @@ base:
    'worker*':
       - lang.ruby.ruby
       - editors.emacs
+      - utils.cmake
       - worker
