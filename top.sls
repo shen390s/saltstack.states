@@ -28,6 +28,5 @@ base:
 
    'worker*':
       - lang.ruby.ruby27
-      - utils.asciidoctor
       - editors.emacs
       - worker
