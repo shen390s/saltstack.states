@@ -27,6 +27,6 @@ base:
       - phabricator.phabricator
 
    'worker*':
-      - lang.ruby.ruby27
+      - lang.ruby.ruby
       - editors.emacs
       - worker
