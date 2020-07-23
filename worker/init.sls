@@ -44,4 +44,4 @@ asciidoctor-web-pdf:
    npm.installed:
       - pkgs: 
          - asciidoctor-pdf
-      - user: rshen
+      - user: root
