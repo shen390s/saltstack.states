@@ -42,5 +42,6 @@ asciidoctor-pdf-cjk:
 
 asciidoctor-web-pdf:
    npm.installed:
-      - pkg: asciidoctor-pdf
+      - pkgs: 
+         - asciidoctor-pdf
       - user: rshen
