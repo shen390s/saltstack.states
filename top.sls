@@ -31,4 +31,5 @@ base:
       - lang.ruby.ruby
       - editors.emacs
       - utils.cmake
+      - utils.node
       - worker
