@@ -29,6 +29,7 @@ base:
 
    'worker*':
       - lang.ruby.ruby
+      - lang.openjdk.openjdk
       - editors.emacs
       - utils.cmake
       - utils.node

@@ -1,0 +1,3 @@
+openjdk:
+   pkg:
+      - installed
