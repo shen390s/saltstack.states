@@ -40,3 +40,6 @@ asciidoctor-pdf-cjk:
    gem.installed:
       - user: root
 
+asciidoctor-web-pdf:
+   npm.installed:
+      - user: rshen
