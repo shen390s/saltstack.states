@@ -7,6 +7,7 @@ base:
       - utils.rsync
       - utils.sshd
       - utils.tmux
+      - utils.git
 
    'ss5*':
       - ss5
