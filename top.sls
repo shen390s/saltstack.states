@@ -32,5 +32,5 @@ base:
       - lang.openjdk.openjdk
       - editors.emacs
       - utils.cmake
-      - utils.node
+      - utils.node12
       - worker
