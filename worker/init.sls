@@ -40,3 +40,6 @@ asciidoctor-pdf-cjk:
    gem.installed:
       - user: root
 
+asciidoctor-pdf-cjk-kai_gen_gothic:
+   gem.installed:
+      - user: root
