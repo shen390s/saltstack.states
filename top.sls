@@ -21,6 +21,9 @@ base:
       - postfix.cyrus-sasl-saslauthd
       - postfix.cyrus-imapd
 
+   'plexserv*':
+      - media.plexserver
+      
    'phabricator*':
       - utils.pygment
       - phabricator.mysql
