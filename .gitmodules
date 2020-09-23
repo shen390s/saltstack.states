@@ -1,0 +1,3 @@
+[submodule "nextcloud-formula"]
+	path = nextcloud-formula
+	url = https://github.com/shen390s/nextcloud-formula.git
