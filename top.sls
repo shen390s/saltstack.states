@@ -27,6 +27,9 @@ base:
    'embyserv*':
       - media.embyserver
 
+   'nextcloud*':
+      - nextcloud.nextcloud.init
+
    'phabricator*':
       - utils.pygment
       - phabricator.mysql
