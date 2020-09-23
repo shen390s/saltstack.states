@@ -24,6 +24,9 @@ base:
    'plexserv*':
       - media.plexserver
       
+   'embyserv*':
+      - media.embyserver
+
    'phabricator*':
       - utils.pygment
       - phabricator.mysql
