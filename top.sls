@@ -28,7 +28,7 @@ base:
       - media.embyserver
 
    'nextcloud*':
-      - nextcloud.nextcloud.init
+      - nextcloud.init
 
    'phabricator*':
       - utils.pygment
