@@ -4,7 +4,7 @@ mysql80-server:
 
     service:
         - name: mysql-server
-	- running
+        - running
 	- enable: True
 	- require:
 	  - file: /usr/local/etc/mysql/my.cnf
