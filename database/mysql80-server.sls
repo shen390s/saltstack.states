@@ -8,7 +8,6 @@ mysql80-server:
         - enable: True
         - require:
           - file: /usr/local/etc/mysql/my.cnf
-          - db-setup
 
 /usr/local/etc/mysql/my.cnf:
     file.managed:
