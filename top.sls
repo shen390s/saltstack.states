@@ -21,6 +21,9 @@ base:
       - postfix.cyrus-sasl-saslauthd
       - postfix.cyrus-imapd
 
+   'mysqlserv*':
+      - database.mysql80.mysql80-server
+      
    'plexserv*':
       - media.plexserver
       
