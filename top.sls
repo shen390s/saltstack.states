@@ -22,7 +22,7 @@ base:
       - postfix.cyrus-imapd
 
    'mysqlserv*':
-      - database.mysql80.mysql80-server
+      - database.mysql80-server
       
    'plexserv*':
       - media.plexserver
