@@ -24,6 +24,6 @@ db-setup:
     cmd.run:
         - name: (echo source /var/db/mysql/db-setup.sql | mysql -u root --skip-password) && touch /var/db/mysql/.db-setup.ok
         - watch:
-             - /tmp/db-setup.sql
+             - /var/db/mysql/db-setup.sql
         - creates:
              - /var/db/mysql/.db-setup.ok
