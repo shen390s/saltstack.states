@@ -15,7 +15,7 @@ mysql80-server:
         - source: salt://database/conf/my.cnf
         - template: jinja
 
-/var/db/mysql/db-setup.mysql:
+/var/db/mysql/db-setup.sql:
     file.managed:
         - source: salt://database/conf/db-setup.sql
         - template: jinja
