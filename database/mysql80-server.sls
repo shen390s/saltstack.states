@@ -21,7 +21,7 @@ mysql80-server:
 
 db-setup:
     cmd.run:
-        - name: (echo source /var/db/mysql/db-setup.sql | mysql -u root --skip-password) && touch /var/db/mysql/.db-setup.ok
+        - name: (echo source /var/db/mysql/db-setup.sql | mysql -u root ) && touch /var/db/mysql/.db-setup.ok
         - watch:
              - /var/db/mysql/db-setup.sql
         - creates:
