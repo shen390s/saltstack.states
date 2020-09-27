@@ -27,4 +27,3 @@ db-setup:
              - /tmp/db-setup.sql
         - creates:
              - /var/db/mysql/.db-setup.ok
-	     
