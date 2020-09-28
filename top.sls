@@ -34,6 +34,7 @@ base:
    'nextcloud*':
       - nextcloud.init
       - nextcloud.nginx
+      - database.redis
 
    'phabricator*':
       - utils.pygment
