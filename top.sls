@@ -8,6 +8,7 @@ base:
       - utils.sshd
       - utils.tmux
       - utils.git
+      - utils.sudo
 
    'ss5*':
       - ss5
