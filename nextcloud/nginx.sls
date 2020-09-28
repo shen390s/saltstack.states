@@ -1,6 +1,6 @@
 php-fpm:
    pkg:
-       - name: php73
+       - name: php74
        - installed
 
    service:
