@@ -33,6 +33,7 @@ base:
 
    'nextcloud*':
       - nextcloud.init
+      - nextcloud.nginx
 
    'phabricator*':
       - utils.pygment
