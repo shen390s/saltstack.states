@@ -10,6 +10,7 @@ base:
       - utils.git
       - utils.sudo
       - utils.bind-tools
+      - itops.consul
 
    'ss5*':
       - ss5
