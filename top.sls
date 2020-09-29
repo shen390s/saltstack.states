@@ -9,6 +9,7 @@ base:
       - utils.tmux
       - utils.git
       - utils.sudo
+      - utils.bind-tools
 
    'ss5*':
       - ss5
